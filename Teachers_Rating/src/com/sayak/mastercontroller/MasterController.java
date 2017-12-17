@@ -43,8 +43,7 @@ public class MasterController extends HttpServlet {
 			rd = request.getRequestDispatcher("StudentLogin.jsp");
 			rd.forward(request, response);
 		}
-		String n2 = request.getParameter("n2");
-		if(n1.equals("Admin_login")){
+		else if(n1.equals("Admin_login")){
 			rd = request.getRequestDispatcher("AdminLogin.jsp");
 			rd.forward(request, response);
 		}

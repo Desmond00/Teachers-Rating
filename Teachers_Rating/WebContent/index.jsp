@@ -10,7 +10,7 @@
 <center>
 <body>
 <button type = Submit name = n1 value = "Student_Login">Login as a Student</button> <br><br>
-<button type = Submit name = n2 value = "Admin_Login">Login as an Admin</button>
+<button type = Submit name = n1 value = "Admin_Login">Login as an Admin</button>
 </body>
 </center>
 </form>
