@@ -62,6 +62,18 @@ public class MasterController extends HttpServlet {
 			rd = request.getRequestDispatcher("StudentHome.jsp");
 			rd.forward(request, response);
 		}
+		else if(action.equals("AdminLogin")){
+			boolean flag = false;
+			String id = request.getParameter("id");
+			String department = request.getParameter("Department");
+			String password = request.getParameter("password");
+			flag = studentService.validateAdmin(id,department,password);
+			if(flag){
+				request.setAttribute("Department", department);
+				rd = request.getRequestDispatcher("AdminHome.jsp");
+				rd.forward(request, response);
+			}
+		}
 	}
 
 }
