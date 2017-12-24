@@ -9,13 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sayak.model.Student;
+import com.sayak.service.StudentService;
+
 /**
  * Servlet implementation class MasterController
  */
 @WebServlet("/MasterController")
 public class MasterController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	RequestDispatcher rd;
+	RequestDispatcher rd = null;
+	StudentService studentService = new StudentService();
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -38,13 +42,24 @@ public class MasterController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String n1 = request.getParameter("n1");		
-		if(n1.equals("Student_Login")){
+		String action = request.getParameter("action");	
+		if(action.equals("Student_Login")){
+			//System.out.println(action);
 			rd = request.getRequestDispatcher("StudentLogin.jsp");
 			rd.forward(request, response);
 		}
-		else if(n1.equals("Admin_login")){
+		else if(action.equals("Admin_Login")){
 			rd = request.getRequestDispatcher("AdminLogin.jsp");
+			rd.forward(request, response);
+		}
+		else if(action.equals("StudentLogin")){
+			Student student = null;
+			//System.out.println("Student after getting logged in " + action);
+			String rollNumber = request.getParameter("rollNumber");
+			System.out.println("In Controller " + rollNumber);
+			student = studentService.getStudent(rollNumber);
+			request.setAttribute("Student", student);
+			rd = request.getRequestDispatcher("StudentHome.jsp");
 			rd.forward(request, response);
 		}
 	}

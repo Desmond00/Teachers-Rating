@@ -10,5 +10,9 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="C:/apache-tomcat-7.0.79/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="C:/oraclexe/app/oracle/product/10.2.0/server/jdbc/lib/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Sayak/Downloads/logback-access-1.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Sayak/Downloads/logback-classic-1.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Sayak/Downloads/logback-core-1.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Sayak/Downloads/slf4j-api-1.7.25.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

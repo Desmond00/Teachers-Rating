@@ -38,31 +38,34 @@
 		}
 		return xmlHttp;
 	}
-	function disabler(){
-		var content = document.getElementById("show").textContent;
+	function disabler() {
+		//alert("disabler() is called");
+		var content = document.getElementById("show").textContent.trim();
 		//console.log(content);
-		var correct = "Roll Number Number Correct";
-		alert(typeof correct);
-		if(content==correct){
-			alert(content);
-		} 
+		var correct = "Roll Number Correct";
+		var incorrect = "Roll Number Incorrect";
+		if (content == correct) {
+			return true;
+		} else if (content == incorrect) {
+			return false;
+		}
 	}
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Student's Login</title>
 </head>
-<form>
+<form action="MasterController" method="POST">
 	<center>
 		<body>
 			<table border=2>
 				<tr>
 					<td>Enter your University Roll Number:</td>
-					<td><input type="text" name=n1 onkeyup="checker(this.value)">
+					<td><input type="text" name="rollNumber" onkeyup="checker(this.value)">
 						<div id="show"></div></td>
 				</tr>
 				<tr>
-					<td colspan="2"><button type="Submit" name="StudentLogin"
-							value="StudentLogin" onclick="disabler()">Login</button></td>
+					<td colspan="2"><button type="Submit" name="action"
+							value="StudentLogin" onclick="return disabler()">Login</button></td>
 				</tr>
 			</table>
 		</body>
