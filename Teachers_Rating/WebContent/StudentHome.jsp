@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Student's Portal</title>
 </head>
+<form action = "MasterController" method = "POST">
 <body>
 	<center>
 		<%
@@ -29,6 +30,12 @@
 			<td><%= student.getCurrent_year() %></td>
 		</tr>
 		</table>
+		<br><br> 
+		<input type = "hidden" name = "Student_CurrentYear" value = "<%=student.getCurrent_year() %>">
+		<input type = "hidden" name = "StudentName" value = "<%=student.getName() %>">
+		<input type = "hidden" name = "Discipline" value = "<%=student.getDiscipline() %>">
+		<button type = "Submit" name = "action" value = "RatingsProceed">Proceed to Rate</button>
 	</center>
 </body>
+</form>
 </html>

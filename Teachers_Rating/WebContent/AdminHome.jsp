@@ -19,8 +19,7 @@
 		<br><br>
 		<button type="Submit" name="RT" value="RT">Remove Teacher</button>
 		<br><br>
-		<button type="Submit" name="GRFT" value="GRFT">Generate
-			Rating for a Teacher</button>
+		<button type="Submit" name="VTR" value="VTR">View Teacher's Rating</button>
 		<br><br>
 	</center>
 </body>
